@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media print {
+  :root {
+    font-size: 10px;
+  }
+}
+
+@media not print {
+  body {
+    @apply p-10 container mx-auto;
+  }
+}
+
+a.link {
+  @apply font-medium outline-none focus:outline-none border-b border-black;
+}

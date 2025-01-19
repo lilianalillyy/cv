@@ -1,6 +1,6 @@
 import { forwardRef, HTMLAttributes } from "react";
 
-import { c } from "../utils";
+import { c, intersperse } from "../utils";
 
 export const CVEntryContent = forwardRef<
   HTMLDivElement,
@@ -53,5 +53,9 @@ export const CVEntryList = forwardRef<
     </ul>
   );
 });
+
+export function CVEntryDateRange({ range }: { range: (string | number)[] }) {
+  return intersperse(range, <>&ndash;</>);
+}
 
 export * from "./CVTemplate";

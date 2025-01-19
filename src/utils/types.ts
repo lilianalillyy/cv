@@ -2,8 +2,8 @@ import { EnvelopeIcon } from "@heroicons/react/24/outline";
 import { ReactNode } from "react";
 
 export interface Section {
-  title?: string;
-  date?: string;
+  title?: ReactNode;
+  date?: ReactNode;
   content?: ReactNode;
   children?: Section[];
 }

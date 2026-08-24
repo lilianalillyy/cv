@@ -61,7 +61,7 @@ export function CVTemplate({ config }: { config: Config }) {
     <div className="flex flex-col gap-8">
       <h1 className="text-7xl font-medium tracking-wide">
         {config.name[0]}
-        <span className="ml-4 text-xl font-light italic">{config.role}</span>
+        {config.role?.length ? <span className="ml-4 text-xl font-light italic">{config.role}</span> : null}
         <br />
         {config.name[1]}
       </h1>

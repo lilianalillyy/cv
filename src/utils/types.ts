@@ -16,7 +16,7 @@ export interface Contact {
 
 export interface Config {
   name: [string, string];
-  role: string;
+  role?: string;
   contacts: Contact[];
   sections: Section[];
   showSectionCounts?: boolean;

@@ -45,10 +45,10 @@ export const CVEntryContentSmall = forwardRef<
 
 export const CVEntryList = forwardRef<
   HTMLUListElement,
-  HTMLAttributes<HTMLUListElement>
+  HTMLAttributes<HTMLUListElement> & { nested?: boolean }
 >(function CVEntryList({ children, className = "", ...props }, ref) {
   return (
-    <ul ref={ref} className={c("list-disc list-inside", className)} {...props}>
+    <ul ref={ref} className={c("list-disc list-inside", className, props.nested && "ml-4")} {...props}>
       {children}
     </ul>
   );

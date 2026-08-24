@@ -19,4 +19,5 @@ export interface Config {
   role: string;
   contacts: Contact[];
   sections: Section[];
+  showSectionCounts?: boolean;
 }

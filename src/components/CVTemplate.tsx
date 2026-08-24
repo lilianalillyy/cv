@@ -13,11 +13,18 @@ function getSectionTitlesCounts(sections: Config["sections"]) {
   }, {});
 }
 
-function RenderSections({ sections }: { sections: Config["sections"] }) {
+function RenderSections({ 
+  sections, 
+  showSectionCounts = false 
+}: { 
+  sections: Config["sections"], 
+  showSectionCounts?: boolean 
+}) {
   const sectionTitlesCounts = useMemo(
     () => getSectionTitlesCounts(sections),
     [sections],
   );
+
   return (
     <>
       {sections.map(({ title, date, content, children }, i) => (
@@ -26,7 +33,7 @@ function RenderSections({ sections }: { sections: Config["sections"] }) {
             <div className="flex flex-col gap-4">
               {title && (
                 <h3 className="text-3xl uppercase font-medium border-b-4 tracking-widest border-black w-fit">
-                  {sectionTitlesCounts[i]}. {title}
+                  {showSectionCounts ? <>{sectionTitlesCounts[i]}. </> : null}{title}
                 </h3>
               )}
               <div
@@ -82,7 +89,7 @@ export function CVTemplate({ config }: { config: Config }) {
         </a>
       </div>
 
-      <RenderSections sections={config.sections} />
+      <RenderSections sections={config.sections} showSectionCounts={config.showSectionCounts} />
     </div>
   );
 }

@@ -32,7 +32,7 @@ function RenderSections({
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-4">
               {title && (
-                <h3 className="text-3xl uppercase font-medium border-b-4 tracking-widest border-black w-fit">
+                <h3 className="text-2xl uppercase font-medium border-b-4 tracking-widest border-black w-fit">
                   {showSectionCounts ? <>{sectionTitlesCounts[i]}. </> : null}{title}
                 </h3>
               )}
@@ -40,7 +40,7 @@ function RenderSections({
                 className={`grid gap-10 ${!date || !content ? "grid-cols-9" : "grid-cols-12"}`}
               >
                 {date && (
-                  <div className="text-xl font-medium col-span-3 tracking-wider">
+                  <div className="text-xl font-medium col-span-3 tracking-wider uppercase">
                     {date}
                   </div>
                 )}

@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 config.tsx
+config.*.tsx
+!config.example.tsx
